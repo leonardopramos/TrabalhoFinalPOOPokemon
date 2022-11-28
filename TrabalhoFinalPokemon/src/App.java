@@ -13,6 +13,9 @@ public class App {
         Pokemon p7 = new Pokemon(1500, 350, "Venusaur", TiposPokemon.PLANTA());
         Pokemon p8 = new Pokemon(2500, 150, "Victreebell", TiposPokemon.PLANTA());
         Pokemon p9 = new Pokemon(5000, 50, "Beedrill", TiposPokemon.PLANTA());
+        Pokemon p10 = new Pokemon(3000, 450, "Tauros", TiposPokemon.NORMAL());
+        Pokemon p11 = new Pokemon(5500, 320, "Snorlax", TiposPokemon.NORMAL());
+        Pokemon p12 = new Pokemon(4400, 330, "Kangaskhan", TiposPokemon.NORMAL());
 
 
         Scanner sc = new Scanner(System.in);
@@ -20,8 +23,8 @@ public class App {
 
         Random r = new Random();
         Random rr = new Random();
-        int r1 = r.nextInt(1,10);
-        int r2 = rr.nextInt(1, 10);
+        int r1 = r.nextInt(1,13);
+        int r2 = rr.nextInt(1, 13);
         Pokemon j1 = null;
         Pokemon j2 = null;
 
@@ -52,6 +55,15 @@ public class App {
         if(r1 == 9){
             j1 = p9;
         }
+        if(r1 == 10){
+            j1 = p10;
+        }
+        if(r1 == 11){
+            j1 = p11;
+        }
+        if(r1 == 12){
+            j1 = p12;
+        }
 
         if(r2 == 1){
             j2 = p1;
@@ -79,6 +91,15 @@ public class App {
         }
         if(r2 == 9){
             j2 = p9;
+        }
+        if(r2 == 10){
+            j2 = p10;
+        }
+        if(r2 == 11){
+            j2 = p11;
+        }
+        if(r2 == 12){
+            j2 = p12;
         }
         Jogador jogador1 = new Jogador("Leonardo", numeroRodadas, j1);
         Jogador jogador2 = new Jogador("Matheus", numeroRodadas, j2);
@@ -110,6 +131,15 @@ public class App {
             System.out.println("--------------HORA DA BATALHA--------------");
                 
             if(jogadorDaVez == 0){
+                if(jogador1.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Fogo") && jogador2.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Planta")){
+                    jogador1.getPokemonDaVez().setAtaque(jogador1.getPokemonDaVez().getAtaque() * 2);
+                }
+                if(jogador1.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Agua") && jogador2.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Fogo")){
+                    jogador1.getPokemonDaVez().setAtaque(jogador1.getPokemonDaVez().getAtaque() * 2);
+                }
+                if(jogador1.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Planta") && jogador2.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Agua")){
+                    jogador1.getPokemonDaVez().setAtaque(jogador1.getPokemonDaVez().getAtaque() * 2);
+                }
                 jogador1.getPokemonDaVez().atacar(jogador2.getPokemonDaVez());
                 jogadorDaVez = 1;
                 System.out.println("------------------------------------------------------------------------------------------------------");
@@ -118,6 +148,15 @@ public class App {
                 continue;
             }
             if(jogadorDaVez == 1){
+                if(jogador2.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Fogo") && jogador1.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Planta")){
+                    jogador2.getPokemonDaVez().setAtaque(jogador1.getPokemonDaVez().getAtaque() * 2);
+                }
+                if(jogador2.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Agua") && jogador1.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Fogo")){
+                    jogador2.getPokemonDaVez().setAtaque(jogador1.getPokemonDaVez().getAtaque() * 2);
+                }
+                if(jogador2.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Planta") && jogador1.getPokemonDaVez().getTipo().getNomeDoTipo().equals("Agua")){
+                    jogador2.getPokemonDaVez().setAtaque(jogador1.getPokemonDaVez().getAtaque() * 2);
+                }
                 jogador2.getPokemonDaVez().atacar(jogador1.getPokemonDaVez());
                 jogadorDaVez = 0;
                 System.out.println("------------------------------------------------------------------------------------------------------");

@@ -6,6 +6,7 @@ public class TiposPokemon {
     private static TiposPokemon agua = new TiposPokemon("Agua", "Hydro Pump");
     private static TiposPokemon fogo = new TiposPokemon("Fogo", "Flamethrower");
     private static TiposPokemon planta = new TiposPokemon("Planta", "Solarbeam");
+    private static TiposPokemon normal = new TiposPokemon("Normal", "Quick attack");
 
     public TiposPokemon(String nomeDoTipo, String nomeDoAtaque) {
         this.nomeDoTipo = nomeDoTipo;
@@ -21,7 +22,9 @@ public class TiposPokemon {
     public static TiposPokemon PLANTA() {
         return planta;
     }
-    
+    public static TiposPokemon NORMAL(){
+        return normal;
+    }
     public String getNomeDoTipo() {
         return nomeDoTipo;
     }

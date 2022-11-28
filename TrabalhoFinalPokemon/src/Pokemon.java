@@ -31,6 +31,9 @@ public class Pokemon{
     public int getAtaque() {
         return ataque;
     }
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
     public TiposPokemon getTipo() {
         return tipo;
     }
